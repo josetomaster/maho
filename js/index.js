@@ -62,3 +62,10 @@ Array.from(navItems)
         })
     });
 
+
+let widthTransition = 1000;
+
+let thumbnails = document.querySelectorAll('.thumbnail');
+thumbnails.forEach((thumbnail,index) => {
+    console.log(index,thumbnail);
+});
