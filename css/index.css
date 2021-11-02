@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap');
+
+/* COLORS */
+:root {
+    --strong-color: #FF3345;
+    --primary-color: #344565;
+}
+
+
+/* FONT FAMILY - SIZE*/
+:root{
+    --body-font: 'Zen Kaku Gothic Antique';
+    --normal-font-size: 1rem;
+    --small-font-size: 0.87rem;
+}
+
+body{
+    max-width:1200px;
+    margin: 0 auto;
+    font-family: var(--body-font);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+ul{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    color:inherit;
+    
+}
+
+/* LAYOUT */
+
+.header{
+    padding-left:1rem;
+    padding-right:1rem;
+}
+.header img {
+    cursor:pointer;
+}
+.global__information{
+    display:flex;
+    justify-content: space-between;
+    padding-top:0.5rem;
+    padding-bottom:1rem;
+    font-size: var(--small-font-size);
+}
+.global__information-securityphone{
+    margin-right:5rem;
+}
+.header__images{
+    display:flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: space-between;
+}
+.header__images-law > img {
+    width:230px;
+    height:auto;
+}
+.header__images-search{
+    align-self:center;
+    font-size:1.7rem;
+    border-left:1px solid rgba(0,0,0,0.5);
+    padding-left:1rem;
+    opacity:0.2;
+    cursor:pointer;
+}
+
+
+.header__socials{
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+
+.nav__list{
+    display:flex;
+    border:1px solid red;
+    background-color: var(--primary-color);
+}
+.nav__item{
+    padding:1rem;
+    
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    font-size:var(--small-font-size);
+    
+}
+.nav__item:hover{
+    background-color: var(--strong-color);
+    color:white;
+}
+.nav__link{
+    display:flex;
+    gap:7px;
+    color:white;
+    align-items:center;
+}
+/* COMPONENTS */
+
+.social-icon{
+    color:var(--strong-color);
+    font-size:1.6rem;
+    padding:0.8rem;
+    cursor:pointer;
+}
+
+.link-icon{
+    color:white;
+}
+.link-arrow{
+    font-size:8px;
+}
+.nav-active{
+    background-color: var(--strong-color);
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width:768px){
+    .global__information{
+        justify-content: center;
+    }
+    .global__information-securityphone{
+        display:none;
+    }
+    .header__images{
+        justify-content: center;
+        text-align: center;
+    }
+    .header__images-search{
+        display:none;
+    }
+}
