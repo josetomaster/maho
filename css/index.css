@@ -77,18 +77,13 @@ a{
     align-items:center;
 }
 
+.nav{
+    background-color: var(--primary-color);
+    position:relative;
+}
 .nav__list{
     display:flex;
-    border:1px solid red;
-    background-color: var(--primary-color);
-}
-.nav__item{
-    padding:1rem;
     
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    font-size:var(--small-font-size);
     
 }
 .nav__item:hover{
@@ -101,6 +96,68 @@ a{
     color:white;
     align-items:center;
 }
+
+
+.nav__item-list{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:200px;
+    transform-origin:center top;
+    transform:scaleY(0);
+}
+.nav__item:hover .nav__item-list {
+    transform:scaleY(1);
+}
+
+.nav__item{
+    padding:1rem;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    font-size:var(--small-font-size);
+    
+}
+.nav__item-list > li{
+    border-bottom:1px solid rgba(0,0,0,0.2);
+    color:var(--primary-color);
+    padding:0.5rem;
+    cursor:pointer;
+    
+}
+.nav__item-list li:hover{
+    background-color: var(--strong-color);
+}
+.nav__item-list li:last-child{
+    border:none;
+}
+
+.menu__toggle{
+    display:none;
+}
+@media screen and (max-width:768px){
+    .nav__list{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+       
+        flex-direction: column;
+    }
+    .nav__item{
+        background-color: var(--primary-color);
+    }
+    .nav__item-list{
+        background-color: white;
+        width:100%;
+    }
+}
+
+
+
+
 /* COMPONENTS */
 
 .social-icon{
@@ -120,8 +177,26 @@ a{
     background-color: var(--strong-color);
 }
 
+#menu-close{
+    transform:rotate(45deg);
+}
 
-/* MEDIA QUERIES */
+
+/* UTIL */
+
+.hide{
+    display:none;
+}
+.show-nav{
+    display:flex;
+}
+.show-nested-list{
+    transform:scaleY(1);
+    z-index:30;
+    
+}
+
+/* HEADER MEDIA QUERIES */
 @media screen and (max-width:768px){
     .global__information{
         justify-content: center;
@@ -136,4 +211,22 @@ a{
     .header__images-search{
         display:none;
     }
+
+
+    
+    .menu__toggle{
+        display:flex;
+        align-items:center;
+        padding:0.5rem;
+        margin-right:1rem;
+        
+        gap:30px;
+        justify-content: flex-end;
+        color:white;
+        cursor:pointer;
+    }
+    .header{
+        padding:0;
+    }
+
 }

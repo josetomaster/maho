@@ -34,3 +34,31 @@ let dateString = `${dayOfWeek} ${dayNumber} de ${month} del ${year}`;
 
 
 document.querySelector('.global__information-date').textContent = dateString;
+
+
+
+let menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click',(e) => {
+    let menuOpen = document.getElementById('menu-open');
+    let menuClose = document.getElementById('menu-close');
+    
+    menuOpen.classList.toggle('hide');
+    menuClose.classList.toggle('hide');
+
+    let navList = document.getElementById('nav-list');
+    navList.classList.toggle('show-nav');
+
+});
+
+let navItems = document.querySelectorAll('.nav__item');
+
+//FILTER ONLY ITEMS WHICH HAVE A LIST AND REGISTER AN EVENT LISTENER 
+Array.from(navItems)
+    .filter(navItem => navItem.children[1] !== undefined)
+    .forEach(item => {
+        item.addEventListener('click',() => {
+            let nestedList = item.children[1];
+            nestedList.classList.toggle('show-nested-list');
+        })
+    });
+
