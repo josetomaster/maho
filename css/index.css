@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap');
 
 *::selection{
     background-color:#FCE003;
@@ -477,13 +477,34 @@ img{
     opacity:0.5;
 }
 
-
-
+.footer{
+    background-color: var(--primary-color);
+    
+    padding:1rem;
+    padding-top:3rem;
+    color:white;
+    font-weight: 100;
+}
+.footer .banner{
+    background-color: #303A4C;
+}
+.footer audio{
+    width:80%;
+    margin-top:2rem;
+}
+.footer img {
+    width:150px;
+    height:auto;
+    display:block;
+    margin: 2rem 0;
+}
+.footer strong {
+    font-size:var(--small-font-size);
+    font-weight: 700;
+}
 /* UTIL */
 
-.hide{
-    display:none;
-}
+
 .show-nav{
     display:flex;
 }
@@ -493,6 +514,31 @@ img{
     
 }
 
+.scroll-button{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    
+    border-radius: 50%;
+    border:3px solid var(--primary-color);
+    background-color: rgba(255,255,255,0.4);
+    
+    position:fixed;
+    bottom:15px;
+    right:15px;
+    transition: all 300ms;
+    font-size:3rem;
+    z-index: var(--z-tooltip);
+    cursor:pointer;
+}
+.scroll-button:hover{
+    color: #F36F5F;
+    border-color: #F36F5F;
+}
+
+.hide{
+    display:none;
+}
 /* HEADER MEDIA QUERIES */
 @media screen and (max-width:768px){
     .global__information{
@@ -544,6 +590,11 @@ img{
     .container{
         grid-template-columns: 1fr 1fr;
         gap:30px;
+    }
+    .footer{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:50px;
     }
     
 }

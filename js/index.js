@@ -63,9 +63,24 @@ Array.from(navItems)
     });
 
 
-let widthTransition = 1000;
 
-let thumbnails = document.querySelectorAll('.thumbnail');
-thumbnails.forEach((thumbnail,index) => {
-    console.log(index,thumbnail);
+window.addEventListener('scroll',() => {
+    let scrollButton = document.querySelector('.scroll-button');
+    if(window.scrollY != 0){
+        let scrollButton = document.querySelector('.scroll-button');
+        scrollButton.classList.remove('hide');
+
+        scrollButton.addEventListener('click',handlerScroll);
+    } else {
+        scrollButton.classList.add('hide');
+        scrollButton.removeEventListener('click',handlerScroll);
+    }
 });
+
+let handlerScroll = function(){
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:'smooth'
+    });
+}
